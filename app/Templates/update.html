@@ -1,0 +1,33 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Update Book Entry</h3>
+                    <form action="updaterecord/{{book.id}}" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="Book Title *" value="{{book.bookTitle}}" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="author" class="form-control" placeholder="Author name*" value="{{book.author}}" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="publisher" class="form-control" placeholder="publisher name*" value="{{book.publisher}}" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="number" class="form-control" placeholder="number of pages*" value="{{book.pages}}" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Update Entry" />
+                        </div>
+                        <div class="form-group">
+                            <a href="{% url 'index' %}" class="ForgetPwd">Go Back</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
